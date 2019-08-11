@@ -1,0 +1,97 @@
+<Widget>
+    <Kind>17</Kind>
+    <Name>bSpindle</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>Laser Power</Name>
+    <Value>867.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>Push Distance</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>MAX SPEED X</Name>
+    <Value>10000.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>MAX SPEED Y</Name>
+    <Value>10000.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>MAX SPEED Z</Name>
+    <Value>1000.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>ACCEL X</Name>
+    <Value>120.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>ACCEL Y</Name>
+    <Value>120.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>ACCEL Z</Name>
+    <Value>120.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>MAX TRAVEL X</Name>
+    <Value>3750.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>MAX TRAVEL Y</Name>
+    <Value>23000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>MAX TRAVEL Z</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>FEEDBACK INTERVAL</Name>
+    <Value>10.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>12</Kind>
+    <Name>PORT</Name>
+<!--    <Value>/dev/cu.usbserial-A100ex3N</Value>-->
+<!--    <Value>/dev/cu.wchusbserial1410</Value>-->
+    <Value>/dev/tty.wchusbserial410</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>115200</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>12</Kind>
+    <Name>INPUT</Name>
+    <Value>?</Value>
+</Widget>
+<Widget>
+    <Kind>20</Kind>
+    <Name>PAUSE</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>ONCE</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>LOOP</Name>
+    <Value>1</Value>
+</Widget>
