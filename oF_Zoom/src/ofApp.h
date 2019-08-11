@@ -30,7 +30,7 @@ class ofApp : public ofBaseApp{
 		void UpDownHandler(bool &_isDown); // Event Handler
 
 		ofTrueTypeFont _font;
-		int realW = 3750, realH = 23500;
+		int realW = 2700, realH = 3700;
     
     float time = 0;
     float timeStamp = 0;
@@ -42,16 +42,16 @@ class ofApp : public ofBaseApp{
     State st = IDLE;
     
     //setting
-    const float thre = 840;
-    const float loopThre = 5;
-    const int exitHour = 18;
-    const float threOpenApp = 4;
+    const float thre = 550; // end seconds 
+    const float loopThre = 5; // loop interval
+    const int exitHour = 22; // exit hour
+    const float threOpenApp = 4; // offset seconds since open app
     bool openApp = true;
     bool homingComp = false;
     
     //relay settings
     ofSerial serialRelay;
-    string portRelay = "/dev/tty.usbserial-AI02RJCG";
+    string portRelay = "COM11";
     int baudRateRelay = 9600;
     int relayState = true;
     

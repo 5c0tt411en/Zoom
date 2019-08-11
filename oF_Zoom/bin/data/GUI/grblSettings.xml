@@ -6,7 +6,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>Laser Power</Name>
-    <Value>867.000000000</Value>
+    <Value>800</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
@@ -26,7 +26,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>MAX SPEED Z</Name>
-    <Value>1000.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
@@ -46,12 +46,12 @@
 <Widget>
     <Kind>4</Kind>
     <Name>MAX TRAVEL X</Name>
-    <Value>3750.000000000</Value>
+    <Value>2700.000000000</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>MAX TRAVEL Y</Name>
-    <Value>23000</Value>
+    <Value>3700.000000000</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
@@ -66,9 +66,7 @@
 <Widget>
     <Kind>12</Kind>
     <Name>PORT</Name>
-<!--    <Value>/dev/cu.usbserial-A100ex3N</Value>-->
-<!--    <Value>/dev/cu.wchusbserial1410</Value>-->
-    <Value>/dev/tty.wchusbserial410</Value>
+    <Value>COM5</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>

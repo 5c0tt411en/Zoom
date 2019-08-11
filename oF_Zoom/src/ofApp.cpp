@@ -2,8 +2,8 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-	ofSetWindowPosition(960, 30);
-	ofSetWindowTitle("Zoom v 0.0.1");
+	ofSetWindowPosition(0, 30);
+	ofSetWindowTitle("Zoom v 0.1.1");
 	ofEnableAlphaBlending();
 	ofSetFrameRate(60);
 
@@ -27,7 +27,7 @@ void ofApp::update(){
     // homing when app opened
     if (time >= threOpenApp && openApp) {
         grbl.killAlarmLock();
-        grbl.homing();
+        //grbl.homing();
         openApp = false;
     }
     
@@ -46,8 +46,9 @@ void ofApp::update(){
                 case IDLE:
                     //Run data when open app
                     if (grbl.status == "Idle") {
+						//ON relay switch
                         sendMessage(ofToString(int(1)));
-                        grbl.loadFromFile("kehai.gcode");
+                        grbl.loadFromFile("gcode/scopitone2019.gcode");
                         st = RUN;
                         timeStamp = ofGetElapsedTimef();
                     }
@@ -58,6 +59,7 @@ void ofApp::update(){
                     break;
                 case RUN:
                     if (time >= thre && grbl.status == "Idle") {
+						//OFF relay switch
                         sendMessage(ofToString(int(2)));
                         st = FINISHED;
                         timeStamp = ofGetElapsedTimef();
@@ -66,6 +68,7 @@ void ofApp::update(){
                 case FINISHED:
                     if (ofGetHours() < exitHour && time >= loopThre) {
                         grbl.repeatFile(grbl.loadedPath);
+						//ON relay switch
                         sendMessage(ofToString(int(1)));
                         st = RUN;
                         timeStamp = ofGetElapsedTimef();
@@ -87,13 +90,13 @@ void ofApp::draw() {
 	int px = 300, py = ofGetHeight() - 10, h = ofGetHeight() - 20, w = h * realW / realH;
 	grbl.draw(px, py, w, -h);
     
-    _font.drawString(grbl.info(), 450, 25);
+    _font.drawString(grbl.info(), 810, 25);
     string s = "[time(sec.)] " + ofToString(time) + '\n';
     s += "[status(0:IDLE, 1:RUN, 2:FINISHED)] " +  ofToString(st) + '\n';
     s += "[loop thre seconds(sec.)] " +  ofToString(thre) + '\n';
     s += "[loop interval(sec.)] " +  ofToString(loopThre) + '\n';
     s += "[exit hour] " +  ofToString(exitHour) + '\n';
-    _font.drawString(s, 450, 250);
+    _font.drawString(s, 860, 100);
 }
 
 //--------------------------------------------------------------
