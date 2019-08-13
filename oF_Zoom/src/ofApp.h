@@ -30,7 +30,7 @@ class ofApp : public ofBaseApp{
 		void UpDownHandler(bool &_isDown); // Event Handler
 
 		ofTrueTypeFont _font;
-		int realW = 2700, realH = 3700;
+		int realW = 2700, realH = 3400;
     
     float time = 0;
     float timeStamp = 0;
@@ -42,7 +42,8 @@ class ofApp : public ofBaseApp{
     State st = IDLE;
     
     //setting
-    const float thre = 550; // end seconds 
+	const float lightON = 445; // light on time
+    const float thre = 495; // end seconds 
     const float loopThre = 5; // loop interval
     const int exitHour = 22; // exit hour
     const float threOpenApp = 4; // offset seconds since open app
@@ -51,7 +52,7 @@ class ofApp : public ofBaseApp{
     
     //relay settings
     ofSerial serialRelay;
-    string portRelay = "COM11";
+    string portRelay = "COM12";
     int baudRateRelay = 9600;
     int relayState = true;
     

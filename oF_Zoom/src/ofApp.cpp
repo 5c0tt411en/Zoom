@@ -27,7 +27,7 @@ void ofApp::update(){
     // homing when app opened
     if (time >= threOpenApp && openApp) {
         grbl.killAlarmLock();
-        //grbl.homing();
+        grbl.homing();
         openApp = false;
     }
     
@@ -46,32 +46,44 @@ void ofApp::update(){
                 case IDLE:
                     //Run data when open app
                     if (grbl.status == "Idle") {
+						//light off 
+                        sendMessage(ofToString(int(4)));
 						//ON relay switch
                         sendMessage(ofToString(int(1)));
                         grbl.loadFromFile("gcode/scopitone2019.gcode");
                         st = RUN;
                         timeStamp = ofGetElapsedTimef();
+						time = ofGetElapsedTimef() - timeStamp;
                     }
                     if (grbl.status == "Run") {
                         st = RUN;
                         timeStamp = ofGetElapsedTimef();
+						time = ofGetElapsedTimef() - timeStamp;
                     }
                     break;
                 case RUN:
+                    if (time >= lightON) {
+						//light on
+                        sendMessage(ofToString(int(3)));
+                    }
                     if (time >= thre && grbl.status == "Idle") {
 						//OFF relay switch
                         sendMessage(ofToString(int(2)));
                         st = FINISHED;
                         timeStamp = ofGetElapsedTimef();
+						time = ofGetElapsedTimef() - timeStamp;
                     }
                     break;
                 case FINISHED:
                     if (ofGetHours() < exitHour && time >= loopThre) {
-                        grbl.repeatFile(grbl.loadedPath);
+						//light off 
+                        sendMessage(ofToString(int(4)));
 						//ON relay switch
                         sendMessage(ofToString(int(1)));
+                        grbl.repeatFile(grbl.loadedPath);
                         st = RUN;
                         timeStamp = ofGetElapsedTimef();
+						time = ofGetElapsedTimef() - timeStamp;
                     }
                     break;
                 default:

@@ -26,11 +26,11 @@ G4 P60
 G4 P0
 M03 S150
 G1 F6000
-G1  X2300 Y3400
+G1  X2300 Y3300
 ; go to tape module end
 M03 S350
 G1 F1000
-G1  X1500 Y3200
+G1  X1500 Y3100
 
 ; go to amplification module
 G4 P0
@@ -54,7 +54,7 @@ G4 P60
 ; go to bottle module
 M03 S150
 G1 F6000
-G1  X500 Y3300
+G1  X500 Y3200
 ; stay at bottle module
 M03 S700
 G4 P60
@@ -68,4 +68,4 @@ G1 X300 Y300
 ; homing
 G4 P0
 M05 S0
-; $H
+$H

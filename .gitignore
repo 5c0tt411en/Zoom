@@ -119,6 +119,16 @@ examples/ios/**/mediaAssets
 Thumbs.db
 # Folder config file
 Desktop.ini
+# else
+*.vcxproj
+*.vcxproj.user
+*.vcxproj.filters
+*.plist
+*.sln
+*.rc
+obj/
+.vs/
+
 
 # Android
 .csettings
