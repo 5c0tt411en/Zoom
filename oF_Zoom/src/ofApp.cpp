@@ -27,7 +27,7 @@ void ofApp::update(){
     // homing when app opened
     if (time >= threOpenApp && openApp) {
         grbl.killAlarmLock();
-        grbl.homing();
+        //grbl.homing();
         openApp = false;
     }
     
@@ -50,7 +50,7 @@ void ofApp::update(){
                         sendMessage(ofToString(int(4)));
 						//ON relay switch
                         sendMessage(ofToString(int(1)));
-                        grbl.loadFromFile("gcode/scopitone2019.gcode");
+                        grbl.loadFromFile("gcode/fast.gcode");
                         st = RUN;
                         timeStamp = ofGetElapsedTimef();
 						time = ofGetElapsedTimef() - timeStamp;
@@ -85,6 +85,9 @@ void ofApp::update(){
                         timeStamp = ofGetElapsedTimef();
 						time = ofGetElapsedTimef() - timeStamp;
                     }
+					if (ofGetHours() >= exitHour && ofGetMinutes() >= killAppMinute) {
+						ofExit();
+					}
                     break;
                 default:
                     break;

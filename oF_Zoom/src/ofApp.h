@@ -43,9 +43,10 @@ class ofApp : public ofBaseApp{
     
     //setting
 	const float lightON = 445; // light on time
-    const float thre = 495; // end seconds 
-    const float loopThre = 5; // loop interval
-    const int exitHour = 22; // exit hour
+    const float thre = 40; // end seconds 
+    const float loopThre = 10; // loop interval
+    const int exitHour = 19; // exit hour
+	const int killAppMinute = 15; // kill app minute
     const float threOpenApp = 4; // offset seconds since open app
     bool openApp = true;
     bool homingComp = false;
